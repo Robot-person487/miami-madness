@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkwrkfve778qn"]
+
+[ext_resource type="Texture2D" uid="uid://cuvroqvfqswnx" path="res://Title bg.png" id="1_gry5b"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1148.0
+
+[node name="TitleBg" type="Sprite2D" parent="Control"]
+texture_filter = 1
+position = Vector2(583, 325.25)
+scale = Vector2(8.89063, 10.0234)
+texture = ExtResource("1_gry5b")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+offset_right = 1148.0
+offset_bottom = 651.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Miami Maddness"
+horizontal_alignment = 1
