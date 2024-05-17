@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxaacjv6xko1a"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_khovd"]
+[ext_resource type="Texture2D" uid="uid://c8l1gpotp2358" path="res://Title bg.png" id="2_snb24"]
+[ext_resource type="Texture2D" uid="uid://blfmcdak81e7w" path="res://New Piskel (2).png" id="3_2yxno"]
+[ext_resource type="Texture2D" uid="uid://c7sgsno1hs5xn" path="res://New Piskel (3).png" id="4_su424"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6fm8k"]
+line_spacing = 3.13
+font_size = 140
+outline_size = 40
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_khovd")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(578.25, 287.125)
+scale = Vector2(9.08984, 9.08984)
+texture = ExtResource("2_snb24")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 52.0
+offset_top = 12.0
+offset_right = 1113.0
+offset_bottom = 204.0
+text = "Miami Madness"
+label_settings = SubResource("LabelSettings_6fm8k")
+
+[node name="Start Button" type="Button" parent="."]
+z_index = 1
+offset_left = 547.0
+offset_top = 247.0
+offset_right = 739.0
+offset_bottom = 366.0
+text = "Start"
+icon = ExtResource("3_2yxno")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Quit Button" type="Button" parent="."]
+offset_left = 479.0
+offset_top = 431.0
+offset_right = 680.0
+offset_bottom = 557.0
+text = "Quit"
+icon = ExtResource("3_2yxno")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Settings Button" type="Button" parent="."]
+z_index = 1
+offset_left = 286.0
+offset_top = 343.0
+offset_right = 482.0
+offset_bottom = 465.0
+text = "Settings"
+icon = ExtResource("3_2yxno")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(575.778, 629.266)
+scale = Vector2(18.6076, 18.6076)
+texture = ExtResource("4_su424")
+
+[node name="Box" type="Sprite2D" parent="."]
+position = Vector2(772, 491)
+scale = Vector2(0.44902, 0.44902)
+texture = ExtResource("3_2yxno")
+
+[node name="Box1" type="Sprite2D" parent="."]
+position = Vector2(383, 490)
+scale = Vector2(0.44902, 0.44902)
+texture = ExtResource("3_2yxno")
+
+[node name="Box2" type="Sprite2D" parent="."]
+position = Vector2(642, 394)
+scale = Vector2(0.44902, 0.44902)
+texture = ExtResource("3_2yxno")
