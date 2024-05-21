@@ -1,0 +1,8 @@
+[gd_resource type="SystemFont" format=3 uid="uid://blesrgtfjjsxh"]
+
+[resource]
+font_names = PackedStringArray("Sitka Heading")
+font_weight = 999
+font_stretch = 50
+msdf_pixel_range = 18
+oversampling = 8.0

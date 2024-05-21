@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://detocdmodfv8b"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_3s55y"]
+[ext_resource type="PackedScene" uid="uid://cylmmoafg2uw" path="res://player.tscn" id="2_tvwrv"]
+[ext_resource type="Texture2D" uid="uid://cspfbq4hs0wxi" path="res://2D City tileset.jpg" id="3_y2am0"]
+[ext_resource type="Texture2D" uid="uid://nba7d8afahab" path="res://plain_cash.png" id="4_14txr"]
+[ext_resource type="Texture2D" uid="uid://bluvy4dedy1vy" path="res://jolly rancher.png" id="5_pc0b8"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_3s55y")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(40, -24)
+scale = Vector2(0.633694, 1.0735)
+polygon = PackedVector2Array(-63.122, 22.3568, 441.854, 22.3568, 441.854, 52.166, -63.122, 52.166, -63.122, 22.3568)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D2"]
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(40, 123)
+scale = Vector2(0.633694, 1.0735)
+polygon = PackedVector2Array(-63.122, 22.3568, 441.854, 22.3568, 441.854, 52.166, -63.122, 52.166, -63.122, 22.3568)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D3"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_top = 32.0
+offset_right = 320.0
+offset_bottom = 144.0
+scale = Vector2(0.437694, 0.276845)
+texture = ExtResource("3_y2am0")
+
+[node name="Player" parent="." instance=ExtResource("2_tvwrv")]
+position = Vector2(-16, 24)
+scale = Vector2(0.559985, 0.559985)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+texture_filter = 1
+offset_left = 8.0
+offset_top = 32.0
+offset_right = 73.0
+offset_bottom = 72.0
+scale = Vector2(0.430207, 0.430207)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "$0"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_14txr")
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_pc0b8")
