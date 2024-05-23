@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cylmmoafg2uw"]
+[gd_scene load_steps=25 format=3 uid="uid://cylmmoafg2uw"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_a2x5c"]
 [ext_resource type="Texture2D" uid="uid://dgkdko14okq6g" path="res://protagonist_standing.png" id="2_drv4r"]
@@ -8,9 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://wlxsyam46bch" path="res://protagonist_walk_left.png" id="5_yguab"]
 [ext_resource type="Texture2D" uid="uid://c3i0fwoyayjrr" path="res://protagonist_walk.png" id="6_klu1f"]
 [ext_resource type="Script" path="res://ProgressBar.gd" id="8_6mffc"]
+[ext_resource type="Texture2D" uid="uid://bns1rp12mdi70" path="res://J_Ur_u.png" id="9_0nwsf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vf7i4"]
-size = Vector2(6.81583, 6.81583)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b4wpd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bij07"]
+bg_color = Color(0.513726, 0.0627451, 0.027451, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g4j65"]
 atlas = ExtResource("2_exi0j")
@@ -122,32 +125,32 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b4wpd"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bij07"]
-bg_color = Color(0.513726, 0.0627451, 0.027451, 1)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vf7i4"]
+size = Vector2(8.18417, 8.18417)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_a2x5c")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(56, 128)
-scale = Vector2(2.51243, 2.51243)
-shape = SubResource("RectangleShape2D_vf7i4")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
-position = Vector2(-1.66893e-06, -2.25863e-06)
-scale = Vector2(0.403627, 0.403627)
-sprite_frames = SubResource("SpriteFrames_6p8kw")
-animation = &"standing_back"
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+offset_left = 241.0
+offset_top = 5.0
+offset_right = 314.0
+offset_bottom = 14.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 243.0
+offset_top = 6.0
+offset_right = 313.0
+offset_bottom = 13.0
+
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
-offset_left = 192.0
-offset_top = 16.0
-offset_right = 403.0
-offset_bottom = 34.0
+offset_left = 242.0
+offset_top = 6.0
+offset_right = 367.0
+offset_bottom = 19.0
 scale = Vector2(0.568121, 0.568121)
 theme_override_styles/background = SubResource("StyleBoxTexture_b4wpd")
 theme_override_styles/fill = SubResource("StyleBoxFlat_bij07")
@@ -157,3 +160,26 @@ allow_greater = true
 allow_lesser = true
 show_percentage = false
 script = ExtResource("8_6mffc")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = 233.0
+offset_top = 3.0
+offset_right = 548.0
+offset_bottom = 253.0
+scale = Vector2(0.0488917, 0.0488917)
+texture = ExtResource("9_0nwsf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(62.3873, 135.887)
+scale = Vector2(1.10079, 1.13204)
+sprite_frames = SubResource("SpriteFrames_6p8kw")
+animation = &"standing_back"
+
+[node name="Area2D" type="Area2D" parent="." groups=["player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(62, 135)
+scale = Vector2(2.51243, 2.51243)
+shape = SubResource("RectangleShape2D_vf7i4")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

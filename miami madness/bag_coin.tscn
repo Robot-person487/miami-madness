@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://jdg8p0nqmv58"]
+
+[ext_resource type="Script" path="res://bag_coin.gd" id="1_abpx0"]
+[ext_resource type="Texture2D" uid="uid://bcef0pqtqw0y0" path="res://CandyBag.png" id="2_ua31c"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d62px"]
+radius = 14.5694
+height = 29.1387
+
+[node name="bag_coin" type="StaticBody2D"]
+
+[node name="Area2D" type="Area2D" parent="." groups=["bag_candy"]]
+script = ExtResource("1_abpx0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(41, 27)
+scale = Vector2(0.48046, 0.48046)
+shape = SubResource("CapsuleShape2D_d62px")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(40.5, 26)
+scale = Vector2(0.53125, 0.5)
+texture = ExtResource("2_ua31c")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

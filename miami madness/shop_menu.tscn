@@ -1,0 +1,230 @@
+[gd_scene load_steps=6 format=3 uid="uid://icbo3sb0qlqv"]
+
+[ext_resource type="Script" path="res://shop_menu.gd" id="1_iugsv"]
+[ext_resource type="SystemFont" uid="uid://blesrgtfjjsxh" path="res://main_menu.tres" id="2_atrs8"]
+[ext_resource type="Texture2D" uid="uid://bcsyw6xmil6fx" path="res://Rich_NPC-1.png.png" id="3_fhn3f"]
+[ext_resource type="Texture2D" uid="uid://cyhihpwcnxomb" path="res://Rich_NPC-2.png.png" id="4_6arvj"]
+[ext_resource type="Texture2D" uid="uid://bp1d182fec8lp" path="res://Rich_NPC-3.png.png" id="5_fvajv"]
+
+[node name="Shop menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iugsv")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 21.0
+offset_right = 115.0
+offset_bottom = 61.0
+scale = Vector2(2.91872, 2.91872)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 4.0
+offset_right = 169.0
+offset_bottom = 25.0
+scale = Vector2(1.05864, 1.05864)
+theme_override_fonts/font = ExtResource("2_atrs8")
+text = "Shop"
+
+[node name="sell" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 216.0
+offset_top = 112.0
+offset_right = 248.0
+offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("2_atrs8")
+theme_override_font_sizes/font_size = 10
+text = "Sell"
+
+[node name="lab_name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 88.0
+offset_right = 140.0
+offset_bottom = 111.0
+scale = Vector2(0.589326, 0.589326)
+theme_override_fonts/font = ExtResource("2_atrs8")
+text = "Coustmer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lab_cost" type="Label" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 88.0
+offset_right = 204.0
+offset_bottom = 111.0
+scale = Vector2(0.589326, 0.589326)
+theme_override_fonts/font = ExtResource("2_atrs8")
+text = "Cost"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="cost" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 72.0
+offset_right = 105.0
+offset_bottom = 95.0
+scale = Vector2(0.589326, 0.589326)
+theme_override_fonts/font = ExtResource("2_atrs8")
+theme_override_font_sizes/font_size = 10
+text = "Cost"
+
+[node name="name1" type="Label" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 64.0
+offset_right = 132.0
+offset_bottom = 87.0
+scale = Vector2(0.589326, 0.589326)
+theme_override_fonts/font = ExtResource("2_atrs8")
+theme_override_font_sizes/font_size = 10
+text = "Coustmer"
+horizontal_alignment = 1
+
+[node name="cost2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 71.8236
+offset_right = 169.0
+offset_bottom = 94.8236
+scale = Vector2(0.589326, 0.589326)
+theme_override_fonts/font = ExtResource("2_atrs8")
+theme_override_font_sizes/font_size = 10
+text = "Cost"
+
+[node name="name2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 63.8236
+offset_right = 196.0
+offset_bottom = 86.8236
+scale = Vector2(0.589326, 0.589326)
+theme_override_fonts/font = ExtResource("2_atrs8")
+theme_override_font_sizes/font_size = 10
+text = "Coustmer"
+horizontal_alignment = 1
+
+[node name="cost3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 71.8236
+offset_right = 241.0
+offset_bottom = 94.8236
+scale = Vector2(0.589326, 0.589326)
+theme_override_fonts/font = ExtResource("2_atrs8")
+theme_override_font_sizes/font_size = 10
+text = "Cost"
+
+[node name="name3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 63.8236
+offset_right = 268.0
+offset_bottom = 86.8236
+scale = Vector2(0.589326, 0.589326)
+theme_override_fonts/font = ExtResource("2_atrs8")
+theme_override_font_sizes/font_size = 10
+text = "Coustmer"
+horizontal_alignment = 1
+
+[node name="sell2" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 216.0
+offset_top = 91.0
+offset_right = 248.0
+offset_bottom = 110.0
+theme_override_fonts/font = ExtResource("2_atrs8")
+theme_override_font_sizes/font_size = 10
+text = "Exit"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 64.0
+offset_top = 24.0
+offset_right = 104.0
+offset_bottom = 64.0
+texture_normal = ExtResource("3_fhn3f")
+stretch_mode = 3
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 24.0
+offset_right = 168.0
+offset_bottom = 64.0
+texture_normal = ExtResource("4_6arvj")
+stretch_mode = 3
+
+[node name="TextureButton3" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 24.0
+offset_right = 240.0
+offset_bottom = 64.0
+texture_normal = ExtResource("5_fvajv")
+stretch_mode = 3
+
+[node name="candy" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 80.0
+offset_right = 105.0
+offset_bottom = 103.0
+scale = Vector2(0.589326, 0.589326)
+theme_override_fonts/font = ExtResource("2_atrs8")
+theme_override_font_sizes/font_size = 10
+text = "Candy"
+
+[node name="candy2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 80.0
+offset_right = 241.0
+offset_bottom = 103.0
+scale = Vector2(0.589326, 0.589326)
+theme_override_fonts/font = ExtResource("2_atrs8")
+theme_override_font_sizes/font_size = 10
+text = "Candy"
+
+[node name="candy3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 80.0
+offset_right = 169.0
+offset_bottom = 103.0
+scale = Vector2(0.589326, 0.589326)
+theme_override_fonts/font = ExtResource("2_atrs8")
+theme_override_font_sizes/font_size = 10
+text = "Candy"
+
+[node name="lab_candy" type="Label" parent="."]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 104.0
+offset_right = 208.0
+offset_bottom = 127.0
+scale = Vector2(0.589326, 0.589326)
+theme_override_fonts/font = ExtResource("2_atrs8")
+text = "Candy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 97.0
+offset_right = 96.0
+offset_bottom = 124.0
+scale = Vector2(1.41274, 1.41274)

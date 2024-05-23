@@ -1,22 +1,23 @@
 extends CharacterBody2D
 class_name Player
 
-signal  healthChanged
+
 const speed =60
 var current_dir = "none"
 var money: int=0
 var candy: int=0
+var inc: int =1
+var candy_bag_inc: int =5
 @export var max_health = 100
 @onready var health: int=max_health
+@onready var shop_menu = $"../Shop menu"
 func _physics_process(delta):
 	player_movement(delta)
 
 func player_movement(delta):
 	
 	if Input.is_action_pressed("ui_right"):
-		money+=5
-		candy+=5
-		take_damage(10)
+		
 		current_dir="right"
 		play_anim()
 		velocity.x =speed
@@ -54,7 +55,8 @@ func player_movement(delta):
 func play_anim():
 	
 	var dir =current_dir
-	var anim = $CollisionShape2D/AnimatedSprite2D
+	var anim = $AnimatedSprite2D
+
 	
 	if dir == "right":
 		anim.flip_h = false
@@ -72,14 +74,32 @@ func play_anim():
 		anim.play("idle")
 	else:
 		anim.play("idle")
-func take_damage(amount: int):
+func take_damage(amount: float):
 	health -= amount
 	if health < 0:
 		health = 0
 
 
-func heal(amount: int):
+func heal(amount: float):
 	health += amount
 	if health > max_health:
+		
 		health = max_health
+
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("candy_shop"):
+		shop_menu.update()
+		shop_menu.visible = true
+	elif area.is_in_group("candy"): 
+		
+		candy+=inc
+		area.queue_free()  # Delete the coin
+	elif area.is_in_group("bag_candy"): 
+		
+		candy+=candy_bag_inc
+		area.queue_free()  
+		
+		
+		
 
